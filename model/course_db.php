@@ -35,9 +35,6 @@ function get_course_name($course_id)
 
 function delete_course($course_id)
 {
-    if (!$course_id) {
-        return "All Courses";
-    }
     global $db;
     $query = 'DELETE FROM courses WHERE courseID = :course_id';
 
