@@ -32,3 +32,17 @@ function get_course_name($course_id)
 
     return $course_name;
 }
+
+function delete_course($course_id)
+{
+    if (!$course_id) {
+        return "All Courses";
+    }
+    global $db;
+    $query = 'DELETE FROM courses WHERE courseID = :course_id';
+
+    $statement = $db->prepare($query);
+    $statement->bindValue(':course_id', $course_id);
+    $statement->execute();
+    $statement->closeCursor();
+}
