@@ -26,7 +26,7 @@
 <?php } ?>
 
 <section id="add" class="add">
-    <h2>Ad Course</h2>
+    <h2>Add Course</h2>
     <form action="." method="post" id="add__form" class="add__form">
         <input type="hidden" name="action" value="add_course">
         <div class="add__inputs">

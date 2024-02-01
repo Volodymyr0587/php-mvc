@@ -6,7 +6,7 @@ function get_assignments_by_course($course_id)
     if ($course_id) {
         $query = 'SELECT A.id, A.description, C.courseName 
                 FROM assignments A LEFT JOIN courses C ON A.courseID = C.courseID 
-                WHERE A.courseID = :course_id ORDER BY A.id';
+                WHERE A.courseID = :course_id ORDER BY id';
     } else {
         $query = 'SELECT A.id, A.description, C.courseName 
                 FROM assignments A LEFT JOIN courses C ON A.courseID = C.courseID 
