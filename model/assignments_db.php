@@ -14,7 +14,10 @@ function get_assignments_by_course($course_id)
     }
 
     $statement = $db->prepare($query);
-    $statement->bindValue(':course_id', $course_id);
+    if ($course_id) {
+        $statement->bindValue(':course_id', $course_id);
+    }
+    // $statement->bindValue(':course_id', $course_id, PDO::PARAM_INT);
     $statement->execute();
 
     $assignments = $statement->fetchAll();

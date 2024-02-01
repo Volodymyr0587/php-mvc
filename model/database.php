@@ -1,6 +1,6 @@
 <?php
 
-$dsn = 'mysql:host=localhost;dbname=assignment_tracker';
+$dsn = 'mysql:host=localhost:3306;dbname=assignment_tracker';
 $username = 'root';
 // $password = 'password';
 
