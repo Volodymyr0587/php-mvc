@@ -22,3 +22,16 @@ function get_assignments_by_course($course_id)
 
     return $assignments;
 }
+
+function delete_assignment($assignment_id)
+{
+    global $db;
+    $query = 'DELETE FROM assignments WHERE id = :assign_id';
+
+    $statement = $db->prepare($query);
+    $statement->bindValue(':assign_id', $assignment_id);
+    $statement->execute();
+
+    $statement->closeCursor();
+
+}
