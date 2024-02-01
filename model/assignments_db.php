@@ -35,3 +35,17 @@ function delete_assignment($assignment_id)
     $statement->closeCursor();
 
 }
+
+function add_assignment($course_id, $description)
+{
+    global $db;
+    $query = 'INSERT INTO assignments (description, courseID) VALUES (:descr, :courseID)';
+
+    $statement = $db->prepare($query);
+    $statement->bindValue(':descr', $description);
+    $statement->bindValue(':courseID', $course_id);
+    $statement->execute();
+
+    $statement->closeCursor();
+
+}
